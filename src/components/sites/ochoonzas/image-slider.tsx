@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type PointerEvent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -24,17 +24,51 @@ export function ImageSlider({ slides, variant, interval, className, dots = true,
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
+  const [dragX, setDragX] = useState(0);
+  const start = useRef<{ x: number; y: number; id: number } | null>(null);
+  const swiped = useRef(false);
+
   const go = useCallback((dir: number) => setIndex((i) => (i + dir + slides.length) % slides.length), [slides.length]);
 
   useEffect(() => {
     if (paused) return;
     const id = window.setInterval(() => go(1), interval + 1000);
     return () => window.clearInterval(id);
-  }, [go, interval, paused]);
+  }, [go, interval, paused, index]);
+
+  // Deslizar con el dedo (o arrastrar con el ratón) cambia de diapositiva.
+  function onPointerDown(e: PointerEvent<HTMLDivElement>) {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    if ((e.target as HTMLElement).closest("button")) return;
+    start.current = { x: e.clientX, y: e.clientY, id: e.pointerId };
+    swiped.current = false;
+    setPaused(true);
+  }
+
+  function onPointerMove(e: PointerEvent<HTMLDivElement>) {
+    const s = start.current;
+    if (!s || s.id !== e.pointerId) return;
+    const dx = e.clientX - s.x;
+    if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(e.clientY - s.y)) {
+      if (!swiped.current) e.currentTarget.setPointerCapture(e.pointerId);
+      swiped.current = true;
+      setDragX(dx);
+    }
+  }
+
+  function onPointerEnd(e: PointerEvent<HTMLDivElement>) {
+    const s = start.current;
+    if (!s || s.id !== e.pointerId) return;
+    const dx = e.clientX - s.x;
+    if (swiped.current && Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+    start.current = null;
+    setDragX(0);
+    if (e.pointerType !== "mouse") setPaused(false);
+  }
 
   return (
     <div
-      className={cn("group relative overflow-hidden bg-neutral-800", className)}
+      className={cn("group relative touch-pan-y overflow-hidden bg-neutral-800 select-none", className)}
       role="region"
       aria-roledescription="carrusel"
       aria-label={label}
@@ -42,13 +76,27 @@ export function ImageSlider({ slides, variant, interval, className, dots = true,
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerEnd}
+      onPointerCancel={onPointerEnd}
+      onClickCapture={(e) => {
+        // Un deslizamiento no debe abrir el enlace de la diapositiva.
+        if (swiped.current) {
+          e.preventDefault();
+          e.stopPropagation();
+          swiped.current = false;
+        }
+      }}
     >
       {slides.map((slide, i) => (
         <Link
           key={slide.title}
           href={slide.href}
+          draggable={false}
           aria-hidden={i !== index}
           tabIndex={i === index ? 0 : -1}
+          style={i === index && dragX ? { transform: `translateX(${dragX * 0.35}px)` } : undefined}
           className={cn(
             "absolute inset-0 block transition-opacity duration-1000 ease-in-out",
             i === index ? "z-10 opacity-100" : "z-0 opacity-0",
@@ -58,6 +106,7 @@ export function ImageSlider({ slides, variant, interval, className, dots = true,
             src={slide.image}
             alt=""
             fill
+            draggable={false}
             sizes="(max-width: 1440px) 100vw, 1440px"
             className={cn("object-cover", variant === "haze" && "saturate-[0.55]")}
             style={slide.position ? { objectPosition: slide.position } : undefined}
