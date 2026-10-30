@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { asset } from "./asset";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { nav } from "./site-data";
@@ -35,7 +36,7 @@ export function Header({ solid = false }: { solid?: boolean }) {
       <div className="flex h-full items-center justify-between px-[34px] max-md:px-5">
         <Link href="/" aria-label="Ocho Onzas, inicio" className="relative block h-[38px] w-[121px]">
           <Image
-            src="/sites/ochoonzas/img/logo-blanco.png"
+            src={asset("/sites/ochoonzas/img/logo-blanco.png")}
             alt="Ocho Onzas, frescos y congelados"
             fill
             sizes="121px"
@@ -43,7 +44,7 @@ export function Header({ solid = false }: { solid?: boolean }) {
             className={cn("object-contain transition-opacity duration-300", light && "opacity-0")}
           />
           <Image
-            src="/sites/ochoonzas/img/logo-gris.png"
+            src={asset("/sites/ochoonzas/img/logo-gris.png")}
             alt=""
             fill
             sizes="121px"

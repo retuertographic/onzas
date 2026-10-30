@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { asset } from "@/components/sites/ochoonzas/asset";
 import { Footer } from "@/components/sites/ochoonzas/footer";
 import { Header } from "@/components/sites/ochoonzas/header";
 import { freshGroups, frozenGroups } from "@/components/sites/ochoonzas/products-data";
@@ -20,7 +21,7 @@ export default function ProductosPage() {
       <Header />
       <main className="flex-1">
         <section className="relative flex h-[420px] items-center justify-center overflow-hidden max-md:h-[340px]">
-          <Image src="/sites/ochoonzas/img/carnes-variadas.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
+          <Image src={asset("/sites/ochoonzas/img/carnes-variadas.jpg")} alt="" fill priority sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-black/35" />
           <div className="relative px-6 pt-10 text-center text-white">
             <h1 className="font-display text-[44px] uppercase leading-none max-md:text-[32px]">Productos</h1>

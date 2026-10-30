@@ -1,6 +1,7 @@
 import type { NavItem, Slide } from "./types";
+import { asset } from "./asset";
 
-const img = (file: string) => `/sites/ochoonzas/img/${file}`;
+const img = (file: string) => asset(`/sites/ochoonzas/img/${file}`);
 
 export const contact = {
   phone: "922 346 145",
