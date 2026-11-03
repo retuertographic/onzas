@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
-// GitHub Pages: export estático servido bajo /<repo>. Sin la variable, build normal (standalone/Docker).
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
+// STATIC_EXPORT=1: export estático para GitHub Pages. NEXT_PUBLIC_BASE_PATH solo si se sirve bajo /<repo>
+// (sin dominio propio). Sin STATIC_EXPORT, build normal (standalone/Docker).
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || undefined;
 
-const nextConfig: NextConfig = basePath
+const nextConfig: NextConfig = process.env.STATIC_EXPORT
   ? {
       output: "export",
       basePath,
