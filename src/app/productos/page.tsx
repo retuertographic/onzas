@@ -6,13 +6,13 @@ import { Footer } from "@/components/sites/ochoonzas/footer";
 import { Header } from "@/components/sites/ochoonzas/header";
 import { freshGroups, frozenGroups } from "@/components/sites/ochoonzas/products-data";
 import { SectionHeading } from "@/components/sites/ochoonzas/section-heading";
-import { whatsappLink } from "@/components/sites/ochoonzas/site-data";
+import { brand, whatsappLink } from "@/components/sites/ochoonzas/site-data";
 import type { ProductGroup } from "@/components/sites/ochoonzas/types";
 import { WhatsappButton } from "@/components/sites/ochoonzas/whatsapp-button";
 
 export const metadata: Metadata = {
   title: "Productos · Ocho Onzas",
-  description: "Carne fresca, pescado, marisco, fruta y precocinados congelados en Los Realejos y el Mercado del Puerto.",
+  description: "Carne fresca, pescado, marisco, fruta y precocinados congelados en Los Realejos, por mayor y por menor.",
 };
 
 export default function ProductosPage() {
@@ -32,7 +32,8 @@ export default function ProductosPage() {
         <section className="px-5 pt-[70px] pb-[20px]">
           <p className="mx-auto max-w-[760px] text-center text-[15px] leading-[1.6] text-onzas-body">
             Carne, pescado, marisco y congelados elegidos como si fueran para nuestra mesa. Buena calidad, buen precio y
-            alguien que te aconseja.
+            alguien que te aconseja. Por caja, por pieza o por unidad: si tienes negocio, con tarifa de negocio, y si te
+            llevas la caja entera, con descuento.
           </p>
         </section>
 
@@ -40,21 +41,21 @@ export default function ProductosPage() {
           id="frescos"
           title="Frescos"
           subtitle="Te cortamos la pieza como la necesitas"
-          intro="Pollo, cerdo, vaca y embutidos frescos. La carne fresca es de aquí, de Canarias y certificada; la refrigerada la traemos de los mejores productores de Sudamérica. Para la plancha, el horno o la brasa: tú dices cómo y nosotros la cortamos."
+          intro="Pollo, cerdo, vaca y embutidos frescos. La carne fresca es producto local; la refrigerada la traemos de los mejores productores de Sudamérica. Para la plancha, el horno o la brasa: tú dices cómo y nosotros la cortamos."
           groups={freshGroups}
         />
         <Category
           id="congelados"
           title="Congelados"
           subtitle="Congelado bien elegido, comida bien resuelta"
-          intro="Pescado, marisco, verdura, fruta y precocinados listos para cuando no hay tiempo. Todo ultracongelado, para que conserve su sabor y su textura. Y si tienes negocio, troceamos el pescado congelado en raciones exactas: menos merma y escandallo controlado. El cerdo y la vaca también los tienes congelados."
+          intro="Pescado, marisco, verdura, fruta y precocinados listos para cuando no hay tiempo. Todo ultracongelado, para que conserve su sabor y su textura. Te lo vendemos por caja o por unidad: 40 croquetas o solo las que necesites. El cerdo y la vaca también los tienes congelados."
           groups={frozenGroups}
           muted
         />
 
         <section className="bg-onzas-grey px-5 py-[54px] text-center text-white">
           <p className="text-[20px] font-light">¿Buscas algo que no ves aquí o quieres encargar?</p>
-          <p className="mt-2 text-[15px] text-white/80">Escríbenos, te lo preparamos y lo recoges en Los Realejos o en el Mercado del Puerto.</p>
+          <p className="mt-2 text-[15px] text-white/80">Escríbenos, te lo preparamos y lo recoges en Los Realejos (de 9:00 a 20:30) o te lo llevamos: repartimos por el norte los martes y viernes, con pedido mínimo de 50 €.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <a
               href={whatsappLink("Hola, quería hacer un encargo")}
@@ -78,6 +79,21 @@ export default function ProductosPage() {
     </>
   );
 }
+
+/** Iconos de categoría del manual corporativo (porcino, res, ave, pescado, marisco, fruta). */
+const groupIcons: Record<string, string> = {
+  pollo: "ave",
+  pavo: "ave",
+  cerdo: "porcino",
+  embutidos: "porcino",
+  vaca: "res",
+  piezas: "pescado",
+  enteros: "pescado",
+  cefalopodos: "pescado",
+  "del-mar": "pescado",
+  mariscos: "marisco",
+  frutas: "fruta",
+};
 
 function Category({
   id,
@@ -105,7 +121,7 @@ function Category({
             <a
               key={g.id}
               href={`#${g.id}`}
-              className="rounded-[5px] border border-onzas/40 px-3 py-1 text-[13px] font-medium text-onzas transition-colors hover:bg-onzas hover:text-white"
+              className="rounded-[5px] border border-onzas-light px-3 py-1 text-[13px] font-normal text-onzas transition-colors hover:bg-onzas-light"
             >
               {g.title}
             </a>
@@ -114,8 +130,13 @@ function Category({
 
         {groups.map((g) => (
           <div key={g.id} id={g.id} className="mt-[54px] scroll-mt-24">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 border-b border-onzas-light pb-2">
-              <h3 className="font-condensed text-[30px] font-normal uppercase leading-none text-onzas-ink">{g.title}</h3>
+            <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-1 border-b border-onzas-light pb-2">
+              <div className="flex items-center gap-3">
+                {groupIcons[g.id] && (
+                  <Image src={brand(`icono-${groupIcons[g.id]}.png`)} alt="" width={44} height={44} className="size-11 rounded-[6px]" />
+                )}
+                <h3 className="font-condensed text-[28px] font-light uppercase leading-none text-onzas-ink">{g.title}</h3>
+              </div>
               <p className="text-[13px] italic text-onzas-body">{g.note}</p>
             </div>
             <ul className="mt-5 grid grid-cols-4 gap-5 max-md:grid-cols-3 max-sm:grid-cols-2 max-sm:gap-3">
@@ -130,7 +151,7 @@ function Category({
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <p className="px-3 py-2 text-center font-condensed text-[19px] uppercase tracking-[0.02em] text-onzas-grey">
+                  <p className="px-3 py-2 text-center font-condensed text-[15px] uppercase tracking-[0.04em] text-onzas-grey">
                     {p.name}
                   </p>
                 </li>

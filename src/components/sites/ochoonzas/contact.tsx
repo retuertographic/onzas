@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { contact, whatsappLink } from "./site-data";
+import { contact, delivery, whatsappLink } from "./site-data";
 
 const inputClass =
   "w-full bg-[#a0a0a0] px-4 text-[12px] text-white placeholder:text-white/90 outline-none focus:bg-[#8f8f8f]";
 
 const buttonClass =
-  "inline-block rounded-[5px] border-2 border-onzas px-[15px] py-[3px] text-[15px] font-medium leading-[1.7] text-onzas transition-colors hover:bg-onzas hover:text-white";
+  "inline-block rounded-[5px] border-2 border-onzas-light px-[15px] py-[3px] text-[15px] font-medium leading-[1.7] text-onzas transition-colors hover:bg-onzas-light";
 
 /**
  * El formulario no tiene servidor: abre WhatsApp con el mensaje ya escrito,
@@ -35,9 +35,9 @@ export function Contact() {
     window.open(whatsappLink(text), "_blank", "noopener,noreferrer");
   }
 
-  const stores = [
-    { title: "Los Realejos", lines: contact.realejos.lines },
-    { title: "Mercado del Puerto", lines: contact.puerto.lines },
+  const columns = [
+    { title: "La tienda", lines: [...contact.store.lines, `Horario: ${contact.hours.toLowerCase()}`] },
+    { title: "Reparto", lines: [delivery.area, delivery.days, delivery.minimum] },
   ];
 
   return (
@@ -46,7 +46,7 @@ export function Contact() {
         <div>
           <h2 className="text-[20px] font-normal uppercase leading-none text-black">Contáctanos</h2>
           <p className="mt-3 text-[13px] leading-[1.6] text-onzas-body">
-            ¿Buscas algo concreto o quieres encargar? Escríbenos y te lo preparamos para que lo recojas sin colas.
+            ¿Buscas algo concreto o quieres encargar? Escríbenos y te lo preparamos para que lo recojas sin colas en Los Realejos o te lo llevemos.
           </p>
           <form onSubmit={onSubmit} className="mt-5" noValidate>
             <div className="grid grid-cols-2 gap-[3%] max-sm:grid-cols-1 max-sm:gap-3">
@@ -63,7 +63,7 @@ export function Contact() {
               className={`${inputClass} mt-[20px] h-[150px] resize-y py-4`}
             />
             <label className="mt-[18px] flex items-center gap-2 text-[12px] text-onzas-body">
-              <input type="checkbox" name="privacidad" className="size-[13px] accent-onzas" />
+              <input type="checkbox" name="privacidad" className="size-[13px] accent-onzas-grey" />
               He leído y acepto la{" "}
               <a href={contact.legal.privacidad} target="_blank" rel="noopener noreferrer" className="font-bold text-black underline">
                 Política de privacidad
@@ -95,7 +95,7 @@ export function Contact() {
         </div>
 
         <div className="grid grid-cols-[1fr_1.15fr_1.35fr] gap-6 self-start pt-[78px] text-center max-lg:pt-0 max-sm:grid-cols-1">
-          {stores.map((s) => (
+          {columns.map((s) => (
             <div key={s.title}>
               <h3 className="text-[18px] font-bold leading-none text-onzas-ink">{s.title}</h3>
               <p className="mt-[14px] text-[12px] leading-[1.5] text-onzas-body">

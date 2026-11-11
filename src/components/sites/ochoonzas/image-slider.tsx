@@ -158,8 +158,8 @@ export function ImageSlider({ slides, variant, interval, className, dots = true,
 
 function HazeCaption({ slide }: { slide: Slide }) {
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/25 px-6 text-center text-white">
-      <p className="font-condensed text-[clamp(40px,6vw,72px)] font-light uppercase leading-none tracking-[0.04em] [text-shadow:0_1px_12px_rgba(0,0,0,0.25)]">
+    <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#54585a]/35 px-6 text-center text-white">
+      <p className="font-condensed text-[clamp(30px,5vw,60px)] font-light uppercase leading-none tracking-[0.04em] [text-shadow:0_1px_12px_rgba(0,0,0,0.25)]">
         <span className="mr-2 opacity-80">|</span>
         {slide.title}
         <span className="ml-2 opacity-80">|</span>
@@ -175,7 +175,7 @@ function BoxCaption({ slide }: { slide: Slide }) {
   return (
     <div className="absolute inset-0 flex items-center justify-center bg-white/20">
       <div className="bg-white/55 px-8 py-5 text-center text-[#5a5a5a] backdrop-blur-[1px]">
-        <p className="font-condensed text-[clamp(40px,5vw,64px)] font-light uppercase leading-[0.95] tracking-[0.02em]">
+        <p className="font-condensed text-[clamp(30px,4.5vw,54px)] font-light uppercase leading-[0.95] tracking-[0.02em]">
           {slide.title}
         </p>
         <p className="mt-2 font-condensed text-[clamp(18px,2vw,26px)] font-light uppercase tracking-[0.06em]">
@@ -188,8 +188,8 @@ function BoxCaption({ slide }: { slide: Slide }) {
 
 function BandCaption({ slide }: { slide: Slide }) {
   return (
-    <div className="absolute inset-x-0 bottom-[9%] bg-white/40 py-2 text-center">
-      <p className="font-condensed text-[28px] font-medium uppercase leading-tight text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.25)]">
+    <div className="absolute inset-x-0 bottom-[9%] bg-[#54585a]/55 py-2 text-center">
+      <p className="font-condensed text-[24px] font-light uppercase tracking-[0.06em] leading-tight text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.25)]">
         {slide.title}
       </p>
     </div>

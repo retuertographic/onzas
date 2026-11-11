@@ -7,11 +7,11 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-montserrat), Helvetica, Arial, sans-serif;
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, monospace;
   --font-heading: var(--font-sans);
-  --font-display: var(--font-raleway), Helvetica, Arial, sans-serif;
-  --font-condensed: var(--font-barlow-condensed), "Arial Narrow", sans-serif;
+  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-condensed: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --color-onzas: var(--onzas);
   --color-onzas-light: var(--onzas-light);
   --color-onzas-ink: var(--onzas-ink);
@@ -56,12 +56,12 @@
 }
 
 :root {
-  /* Ocho Onzas: azul claro de la marca (#9bcbeb), una versión oscura legible y el gris del rótulo */
-  --onzas: #2a76a8;
+  /* Manual corporativo: gris Pantone 425C (#54585A) y azul Pantone 291C (#9BCBEB) */
+  --onzas: #54585a;
   --onzas-light: #9bcbeb;
-  --onzas-ink: #333333;
-  --onzas-body: #666666;
-  --onzas-grey: #54595f;
+  --onzas-ink: #3d4042;
+  --onzas-body: #63676a;
+  --onzas-grey: #54585a;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -138,7 +138,7 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-sans font-light;
   }
 }
 html {

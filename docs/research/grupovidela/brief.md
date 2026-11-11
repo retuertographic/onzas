@@ -15,18 +15,18 @@ No se reutiliza ningún logo, icono, foto ni texto de Grupo Videla.
 
 1. Cabecera fija de 64 px, transparente sobre la portada y blanca al hacer scroll; menú Montserrat 13 px/600 con desplegables de 240 px y borde superior de 3 px.
 2. Portada de 660 px con fondo fijo, logo centrado y lema en Raleway 33 px → "Tu aliado en la mesa".
-3. ¿Quiénes somos? (título 22 px/400 + subtítulo 20 px/300 en azul; texto 15/22,5 px #666) y 4 valores con iconos de trazo → pilares de marca.
+3. ¿Quiénes somos? (título 22 px/400 + subtítulo 20 px/300; texto 15/22,5 px), historia del nombre y 4 valores con iconos de trazo.
 4. Carrusel de 1152×492 con fundido, flechas al pasar el ratón y puntos → diferenciales (a tu medida, fresco de hoy, de la tierra, del mar).
 5. ¿Qué hacemos? con cita de borde azul y botón con borde de 2 px y radio de 5 px.
-6. Carrusel a todo el ancho de 400 px con caja blanca translúcida → hostelería, troceado, Los Realejos, Mercado del Puerto, reparto.
+6. Carrusel a todo el ancho de 400 px con caja blanca translúcida → hostelería, al detalle, la tienda, reparto.
 7. Productos: título de 40 px con línea, 3 tarjetas verticales (720:1191) con banda en Barlow Condensed y banner rotativo de 200 px.
-8. Contáctanos sobre #f2f2f2: formulario de campos grises y tres columnas de direcciones → las dos tiendas y pedidos (+ mapa).
+8. Contáctanos sobre #f2f2f2: formulario de campos grises y tres columnas → la tienda, reparto y pedidos (+ mapa).
 9. Pie oscuro rgba(0,0,0,.84) con dirección y enlaces legales.
 
 ## Colores y tipografía
 
-- Referencia: acento #006f9b. Ocho Onzas: azul de marca #9bcbeb (líneas) y #2a76a8 como versión legible para texto; gris del rótulo #54595f.
-- Montserrat (cuerpo y títulos), Raleway (lema), Barlow Condensed (rótulos sobre imagen; en la referencia vienen dentro de las fotos).
+- Referencia: acento #006f9b. Ocho Onzas (manual): textos en gris #54585A y azul #9BCBEB en líneas, bordes e iconos.
+- Helvetica Neue Light en toda la web, según el manual (en la referencia: Montserrat, Raleway y Barlow Condensed).
 
 ## Decisiones y huecos
 
@@ -34,5 +34,21 @@ No se reutiliza ningún logo, icono, foto ni texto de Grupo Videla.
 - El enlace "¿Quieres formar parte de nuestro equipo?" se sustituyó por el gancho B2B "¿Tienes bar, restaurante o guachinche?".
 - No se ha reproducido el aviso de cookies ni el selector de idiomas de la referencia.
 - Los enlaces legales apuntan a las páginas actuales de ochoonzas.com.
-- Pendiente de confirmar con el cliente (ver "Cuestiones" de la guía): zonas y días de reparto, nombres de cosecheros,
-  productos de elaboración propia, horarios y fotos reales del puesto del Mercado. No se ha inventado ninguno de esos datos.
+
+## Información confirmada por el cliente (noviembre de 2026)
+
+- Ya no hay puesto en el Mercado Municipal del Puerto de la Cruz (traspasado a mediados de octubre): única tienda en Los Realejos.
+- Nombre: 8 onzas de sal (226 g) era el salario de los jornaleros. La web mantiene "Ocho Onzas" escrito, como el logotipo y la razón social.
+- Historia: empieza hacia 2014 con la trayectoria de Ricardo Molini; gestión renovada desde 2018 por Manuel Molini.
+- Sin producto estrella: la cercanía, la sinceridad y la calidad-precio (sin producto de baja gama).
+- Venta por mayor y por menor (por caja, por pieza o por unidad); tarifa más barata para negocios y descuento por caja entera.
+- Km 0 puntual (excedentes de agricultores locales); huevos, pan, bollería y carne fresca siempre de producto local.
+- Reparto: norte de Tenerife (de Buenavista a Santa Cruz), martes y viernes; jueves y sábados para algunos clientes; pedido mínimo 50 €.
+- Horario: de 9:00 a 20:30 (no se han indicado los días).
+- Modelo único: carnicería + congelados + conservas, bebidas y licores.
+
+## Identidad (Manual corporativo)
+
+- Colores: gris Pantone 425C (#54585A) como principal y azul Pantone 291C (#9BCBEB). Sobre fondo oscuro, logotipo azul.
+- Tipografía secundaria: Helvetica Neue Light. Logotipos e iconos de categoría extraídos del PDF de logos originales
+  en `public/sites/ochoonzas/brand/`.

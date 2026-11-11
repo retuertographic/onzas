@@ -24,7 +24,7 @@ export function Products() {
                 sizes="(max-width: 768px) 360px, 340px"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <span className="absolute inset-x-0 bottom-[3%] flex min-h-[25%] flex-col items-center justify-center bg-white/35 py-3 font-condensed text-[34px] font-normal uppercase leading-[1.05] text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.3)]">
+              <span className="absolute inset-x-0 bottom-[3%] flex min-h-[25%] flex-col items-center justify-center bg-[#54585a]/55 py-3 font-condensed text-[30px] font-light uppercase tracking-[0.04em] leading-[1.05] text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.3)]">
                 {card.title.map((line) => (
                   <span key={line}>{line}</span>
                 ))}

@@ -34,20 +34,20 @@ export function Header({ solid = false }: { solid?: boolean }) {
       )}
     >
       <div className="flex h-full items-center justify-between px-[34px] max-md:px-5">
-        <Link href="/" aria-label="Ocho Onzas, inicio" className="relative block h-[38px] w-[121px]">
+        <Link href="/" aria-label="Ocho Onzas, inicio" className="relative block h-[38px] w-[145px]">
           <Image
-            src={asset("/sites/ochoonzas/img/logo-blanco.png")}
+            src={asset("/sites/ochoonzas/brand/logo-azul-blanco.png")}
             alt="Ocho Onzas, frescos y congelados"
             fill
-            sizes="121px"
+            sizes="145px"
             priority
             className={cn("object-contain transition-opacity duration-300", light && "opacity-0")}
           />
           <Image
-            src={asset("/sites/ochoonzas/img/logo-gris.png")}
+            src={asset("/sites/ochoonzas/brand/logo-gris.png")}
             alt=""
             fill
-            sizes="121px"
+            sizes="145px"
             className={cn("object-contain transition-opacity duration-300", !light && "opacity-0")}
           />
         </Link>
@@ -69,7 +69,7 @@ export function Header({ solid = false }: { solid?: boolean }) {
                 {item.children && (
                   <ul
                     className={cn(
-                      "invisible absolute top-full left-0 w-[240px] border-t-[3px] border-onzas py-5 opacity-0 shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-[opacity,visibility] duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100",
+                      "invisible absolute top-full left-0 w-[240px] border-t-[3px] border-onzas-light py-5 opacity-0 shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-[opacity,visibility] duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100",
                       light ? "bg-white" : "bg-black/15 backdrop-blur-sm",
                     )}
                   >
@@ -106,7 +106,7 @@ export function Header({ solid = false }: { solid?: boolean }) {
 
       {open && (
         <nav
-          className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-t-[3px] border-onzas bg-white px-5 py-4 shadow-md lg:hidden"
+          className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-t-[3px] border-onzas-light bg-white px-5 py-4 shadow-md lg:hidden"
           aria-label="Menú móvil"
         >
           <ul>
