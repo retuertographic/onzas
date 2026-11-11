@@ -5,6 +5,7 @@ export function Footer() {
     { label: "Aviso legal", href: contact.legal.aviso },
     { label: "Política de privacidad", href: contact.legal.privacidad },
     { label: "Política de cookies", href: contact.legal.cookies },
+    { label: "Instagram", href: contact.instagram },
     { label: "Facebook", href: contact.facebook },
   ];
   return (

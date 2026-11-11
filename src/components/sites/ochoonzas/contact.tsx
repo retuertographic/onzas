@@ -122,6 +122,15 @@ export function Contact() {
               <a href={`mailto:${contact.email}`} className="block [overflow-wrap:anywhere] hover:text-onzas">
                 {contact.email}
               </a>
+              <span className="mt-2 block">
+                <a href={contact.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-onzas">
+                  Instagram
+                </a>
+                {" · "}
+                <a href={contact.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-onzas">
+                  Facebook
+                </a>
+              </span>
             </p>
           </div>
 

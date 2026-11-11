@@ -10,7 +10,8 @@ export const contact = {
   whatsapp: "629 52 92 20",
   whatsappNumber: "34629529220",
   email: "ochoonzascanarias@gmail.com",
-  facebook: "https://www.facebook.com/ochoonzastiendas/",
+  facebook: "https://www.facebook.com/ochoonzascarnesycongelados",
+  instagram: "https://www.instagram.com/ochoonzascarnesycongelados/",
   hours: "De lunes a sábado, de 9:00 a 20:30. Domingo cerrado",
   store: {
     name: "Tienda de Los Realejos",
