@@ -36,7 +36,7 @@ export function Contact() {
   }
 
   const columns = [
-    { title: "La tienda", lines: [...contact.store.lines, `Horario: ${contact.hours.toLowerCase()}`] },
+    { title: "La tienda", lines: [...contact.store.lines, `Horario: ${contact.hours.charAt(0).toLowerCase()}${contact.hours.slice(1)}`] },
     { title: "Reparto", lines: [delivery.area, delivery.days, delivery.minimum] },
   ];
 

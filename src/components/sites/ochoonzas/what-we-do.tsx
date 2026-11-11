@@ -19,7 +19,7 @@ export function WhatWeDo() {
     },
     {
       title: "La tienda",
-      lines: [...contact.store.lines.slice(0, 2), `Horario: ${contact.hours.toLowerCase()}`],
+      lines: [...contact.store.lines.slice(0, 2), `Horario: ${contact.hours.charAt(0).toLowerCase()}${contact.hours.slice(1)}`],
     },
   ];
 
@@ -44,7 +44,7 @@ export function WhatWeDo() {
           </p>
           <blockquote className="border-l-[5px] border-onzas-light pl-[20px] italic">
             ¿Buscas algo concreto o quieres encargar? Escríbenos por WhatsApp o pásate por la tienda de Los Realejos,
-            de 9:00 a 20:30.
+            de lunes a viernes de 9:00 a 20:30.
           </blockquote>
         </div>
 
