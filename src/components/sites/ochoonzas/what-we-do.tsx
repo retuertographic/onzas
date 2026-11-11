@@ -44,7 +44,7 @@ export function WhatWeDo() {
           </p>
           <blockquote className="border-l-[5px] border-onzas-light pl-[20px] italic">
             ¿Buscas algo concreto o quieres encargar? Escríbenos por WhatsApp o pásate por la tienda de Los Realejos,
-            de lunes a viernes de 9:00 a 20:30.
+            de lunes a sábado de 9:00 a 20:30.
           </blockquote>
         </div>
 

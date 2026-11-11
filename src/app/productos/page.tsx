@@ -55,7 +55,7 @@ export default function ProductosPage() {
 
         <section className="bg-onzas-grey px-5 py-[54px] text-center text-white">
           <p className="text-[20px] font-light">¿Buscas algo que no ves aquí o quieres encargar?</p>
-          <p className="mt-2 text-[15px] text-white/80">Escríbenos, te lo preparamos y lo recoges en Los Realejos (de lunes a viernes, de 9:00 a 20:30) o te lo llevamos: repartimos por el norte los martes y viernes, a partir de 50 €.</p>
+          <p className="mt-2 text-[15px] text-white/80">Escríbenos, te lo preparamos y lo recoges en Los Realejos (de lunes a sábado, de 9:00 a 20:30) o te lo llevamos: repartimos por el norte los martes y viernes, a partir de 50 €.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <a
               href={whatsappLink("Hola, quería hacer un encargo")}

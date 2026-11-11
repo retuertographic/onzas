@@ -11,7 +11,7 @@ export const contact = {
   whatsappNumber: "34629529220",
   email: "ochoonzascanarias@gmail.com",
   facebook: "https://www.facebook.com/ochoonzastiendas/",
-  hours: "De lunes a viernes, de 9:00 a 20:30",
+  hours: "De lunes a sábado, de 9:00 a 20:30. Domingo cerrado",
   store: {
     name: "Tienda de Los Realejos",
     lines: ["C. la Zamora, 12", "38419 Los Realejos", "Santa Cruz de Tenerife"],

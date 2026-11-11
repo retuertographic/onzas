@@ -44,7 +44,7 @@ No se reutiliza ningún logo, icono, foto ni texto de Grupo Videla.
 - Venta por mayor y por menor (por caja, por pieza o por unidad); tarifa más barata para negocios y descuento por caja entera.
 - Km 0 puntual (excedentes de agricultores locales); huevos, pan, bollería y carne fresca siempre de producto local.
 - Reparto: norte de Tenerife (de Buenavista a Santa Cruz), martes y viernes; jueves y sábados para algunos clientes; a partir de 50 € (sin indicar coste).
-- Horario: de lunes a viernes, de 9:00 a 20:30.
+- Horario: de lunes a sábado, de 9:00 a 20:30; domingo cerrado.
 - Nombre en textos: "Ocho Onzas" (como el logotipo); "8 onzas" solo para contar el origen.
 - Modelo único: carnicería + congelados + conservas, bebidas y licores.
 
