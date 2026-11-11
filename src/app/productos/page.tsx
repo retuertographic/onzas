@@ -5,6 +5,7 @@ import { asset } from "@/components/sites/ochoonzas/asset";
 import { Footer } from "@/components/sites/ochoonzas/footer";
 import { Header } from "@/components/sites/ochoonzas/header";
 import { freshGroups, frozenGroups } from "@/components/sites/ochoonzas/products-data";
+import { OrderButton } from "@/components/sites/ochoonzas/order-button";
 import { SectionHeading } from "@/components/sites/ochoonzas/section-heading";
 import { brand, whatsappLink } from "@/components/sites/ochoonzas/site-data";
 import type { ProductGroup } from "@/components/sites/ochoonzas/types";
@@ -58,7 +59,7 @@ export default function ProductosPage() {
           <p className="mt-2 text-[15px] text-white/80">Escríbenos, te lo preparamos y lo recoges en Los Realejos (de lunes a sábado, de 9:00 a 20:30) o te lo llevamos: repartimos por el norte los martes y viernes, a partir de 50 €.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <a
-              href={whatsappLink("Hola, quería hacer un encargo")}
+              href={whatsappLink("Hola, Ocho Onzas. Quería hacer un pedido:\n")}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-[5px] border-2 border-white px-[15px] py-[3px] text-[15px] font-medium leading-[1.7] transition-colors hover:bg-white hover:text-onzas-grey"
@@ -137,11 +138,14 @@ function Category({
                 )}
                 <h3 className="font-condensed text-[28px] font-light uppercase leading-none text-onzas-ink">{g.title}</h3>
               </div>
-              <p className="text-[13px] italic text-onzas-body">{g.note}</p>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                <p className="text-[13px] italic text-onzas-body">{g.note}</p>
+                <OrderButton category={`${g.title.toLowerCase()} (${title.toLowerCase()})`} label={`Pedir ${g.title.toLowerCase()}`} />
+              </div>
             </div>
             <ul className="mt-5 grid grid-cols-4 gap-5 max-md:grid-cols-3 max-sm:grid-cols-2 max-sm:gap-3">
               {g.items.map((p) => (
-                <li key={p.name} className="group overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.08)]">
+                <li key={p.name} className="group flex flex-col overflow-hidden bg-white shadow-[0_1px_3px_rgba(0,0,0,0.08)]">
                   <div className="relative aspect-[2/1] overflow-hidden">
                     <Image
                       src={p.image}
@@ -154,6 +158,12 @@ function Category({
                   <p className="px-3 py-2 text-center font-condensed text-[15px] uppercase tracking-[0.04em] text-onzas-grey">
                     {p.name}
                   </p>
+                  <OrderButton
+                    category={`${g.title.toLowerCase()} (${title.toLowerCase()})`}
+                    product={p.name.toLowerCase()}
+                    variant="compact"
+                    className="mt-auto"
+                  />
                 </li>
               ))}
             </ul>

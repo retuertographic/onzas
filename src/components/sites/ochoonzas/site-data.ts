@@ -34,6 +34,14 @@ export const delivery = {
 export const whatsappLink = (text?: string) =>
   `https://wa.me/${contact.whatsappNumber}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
+/** Mensaje de pedido ya escrito: el cliente solo tiene que completar cantidad y entrega. */
+export const orderMessage = (category: string, product?: string) =>
+  product
+    ? `Hola, Ocho Onzas. Quería hacer un pedido de ${category}: ${product}.\nCantidad: \nCorte o preparación: \n¿Recogida en tienda o reparto?: `
+    : `Hola, Ocho Onzas. Quería hacer un pedido de ${category}.\n¿Qué me recomendáis hoy?\nCantidad aproximada: \n¿Recogida en tienda o reparto?: `;
+
+export const orderLink = (category: string, product?: string) => whatsappLink(orderMessage(category, product));
+
 export const nav: NavItem[] = [
   {
     label: "Ocho Onzas",
@@ -92,9 +100,9 @@ export const serviceSlides: Slide[] = [
 ];
 
 export const productCards = [
-  { title: ["Carne", "fresca"], image: img("mostrador-chuleton.jpg"), href: "/productos#frescos" },
-  { title: ["Pescado", "congelado"], image: img("pescado-entero.jpg"), href: "/productos#piezas" },
-  { title: ["Marisco"], image: img("marisco.jpg"), href: "/productos#mariscos" },
+  { title: ["Carne", "fresca"], order: "carne fresca", image: img("mostrador-chuleton.jpg"), href: "/productos#frescos" },
+  { title: ["Pescado", "congelado"], order: "pescado congelado", image: img("pescado-entero.jpg"), href: "/productos#piezas" },
+  { title: ["Marisco"], order: "marisco", image: img("marisco.jpg"), href: "/productos#mariscos" },
 ];
 
 export const moreSlides: Slide[] = [
