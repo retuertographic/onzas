@@ -38,10 +38,6 @@ export function WhatWeDo() {
             si tienes negocio, te la llevamos: <strong className={strong}>repartimos a empresas por el norte</strong>, de
             Buenavista a Santa Cruz.
           </p>
-          <p>
-            Y cuando a un agricultor de la zona le sobra cosecha y no consigue venderla, le echamos una mano y la
-            ponemos en el mostrador. Lo de aquí, cuando lo hay.
-          </p>
           <blockquote className="border-l-[5px] border-onzas-light pl-[20px] italic">
             ¿Buscas algo concreto o quieres encargar? Escríbenos por WhatsApp o pásate por la tienda de Los Realejos,
             de lunes a sábado de 9:00 a 20:30.
