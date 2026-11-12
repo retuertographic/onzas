@@ -14,8 +14,8 @@ export function WhatWeDo() {
       ],
     },
     {
-      title: "Reparto",
-      lines: [delivery.area, `${delivery.days}. ${delivery.extraDays}.`, delivery.minimum],
+      title: "Reparto a empresas",
+      lines: [delivery.audience, delivery.area, `${delivery.days}. ${delivery.extraDays}.`, delivery.minimum],
     },
     {
       title: "La tienda",
@@ -29,14 +29,14 @@ export function WhatWeDo() {
         <SectionHeading title="¿Qué hacemos?" subtitle="Del mostrador a tu cocina, en la cantidad que necesites" />
         <div className="mt-[26px] space-y-[22px] text-[15px] leading-[1.5] text-onzas-body">
           <p>
-            En <strong className={strong}>Ocho Onzas</strong> cortamos, preparamos y te llevamos lo que necesitas para
-            la mesa. Pollo, cerdo, vaca y embutidos frescos; pescado, marisco, verdura, fruta y precocinados congelados
+            En <strong className={strong}>Ocho Onzas</strong> cortamos y preparamos lo que necesitas para la mesa. Pollo, cerdo, vaca y embutidos frescos; pescado, marisco, verdura, fruta y precocinados congelados
             para cuando no hay tiempo; y conservas, bebidas y licores para no tener que ir a otro sitio.
           </p>
           <p>
             Vendemos <strong className={strong}>por mayor y por menor</strong>: a bares y restaurantes y a la gente
-            del barrio, con el mismo cuidado y una tarifa distinta para cada uno. Te cortamos la pieza como la quieres y
-            te la llevamos: <strong className={strong}>repartimos por el norte</strong>, de Buenavista a Santa Cruz.
+            del barrio, con el mismo cuidado y una tarifa distinta para cada uno. Te cortamos la pieza como la quieres y,
+            si tienes negocio, te la llevamos: <strong className={strong}>repartimos a empresas por el norte</strong>, de
+            Buenavista a Santa Cruz.
           </p>
           <p>
             Y cuando a un agricultor de la zona le sobra cosecha y no consigue venderla, le echamos una mano y la

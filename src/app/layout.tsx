@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Ocho Onzas · Tu aliado en la mesa",
   description:
-    "Carnicería, congelados, conservas y bebidas en Los Realejos, con reparto por el norte de Tenerife. Calidad de mercado, precio de barrio y trato de amigos.",
+    "Carnicería, congelados, conservas y bebidas en Los Realejos, y reparto a empresas por el norte de Tenerife. Calidad de mercado, precio de barrio y trato de amigos.",
 };
 
 export default function RootLayout({

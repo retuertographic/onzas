@@ -37,7 +37,7 @@ export function Contact() {
 
   const columns = [
     { title: "La tienda", lines: [...contact.store.lines, `Horario: ${contact.hours.charAt(0).toLowerCase()}${contact.hours.slice(1)}`] },
-    { title: "Reparto", lines: [delivery.area, delivery.days, delivery.minimum] },
+    { title: "Reparto a empresas", lines: [delivery.audience, delivery.area, delivery.days, delivery.minimum] },
   ];
 
   return (
@@ -46,7 +46,7 @@ export function Contact() {
         <div>
           <h2 className="text-[20px] font-normal uppercase leading-none text-black">Contáctanos</h2>
           <p className="mt-3 text-[13px] leading-[1.6] text-onzas-body">
-            ¿Buscas algo concreto o quieres encargar? Escríbenos y te lo preparamos para que lo recojas sin colas en Los Realejos o te lo llevemos.
+            ¿Buscas algo concreto o quieres encargar? Escríbenos y te lo preparamos para que lo recojas sin colas en Los Realejos. Si tienes negocio, también te lo llevamos.
           </p>
           <form onSubmit={onSubmit} className="mt-5" noValidate>
             <div className="grid grid-cols-2 gap-[3%] max-sm:grid-cols-1 max-sm:gap-3">

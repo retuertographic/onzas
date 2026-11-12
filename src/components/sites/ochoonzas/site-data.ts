@@ -25,6 +25,7 @@ export const contact = {
 };
 
 export const delivery = {
+  audience: "Solo para empresas y hostelería",
   area: "Norte de Tenerife, de Buenavista a Santa Cruz",
   days: "Martes y viernes",
   extraDays: "Jueves y sábados, para algunos clientes, según la ruta",
@@ -37,8 +38,8 @@ export const whatsappLink = (text?: string) =>
 /** Mensaje de pedido ya escrito: el cliente solo tiene que completar cantidad y entrega. */
 export const orderMessage = (category: string, product?: string) =>
   product
-    ? `Hola, Ocho Onzas. Quería hacer un pedido de ${category}: ${product}.\nCantidad: \nCorte o preparación: \n¿Recogida en tienda o reparto?: `
-    : `Hola, Ocho Onzas. Quería hacer un pedido de ${category}.\n¿Qué me recomendáis hoy?\nCantidad aproximada: \n¿Recogida en tienda o reparto?: `;
+    ? `Hola, Ocho Onzas. Quería hacer un pedido de ${category}: ${product}.\nCantidad: \nCorte o preparación: \n¿Recogida en tienda o reparto (solo empresas)?: `
+    : `Hola, Ocho Onzas. Quería hacer un pedido de ${category}.\n¿Qué me recomendáis hoy?\nCantidad aproximada: \n¿Recogida en tienda o reparto (solo empresas)?: `;
 
 export const orderLink = (category: string, product?: string) => whatsappLink(orderMessage(category, product));
 
@@ -59,7 +60,7 @@ export const nav: NavItem[] = [
     children: [
       { label: "Por mayor y por menor", href: "/#servicios" },
       { label: "Hostelería", href: "/#hosteleria" },
-      { label: "Reparto", href: "/#servicios" },
+      { label: "Reparto a empresas", href: "/#servicios" },
       { label: "Encargos por WhatsApp", href: whatsappLink() },
     ],
   },
@@ -96,7 +97,7 @@ export const serviceSlides: Slide[] = [
   { title: "Hostelería", subtitle: "Tarifa de negocio", image: img("pescado-troceado.jpg"), href: "/#hosteleria" },
   { title: "Al detalle", subtitle: "Por unidad", image: img("mostrador-lomo.jpg"), href: "/#servicios", position: "center 70%" },
   { title: "Los Realejos", subtitle: "La tienda", image: img("tienda-los-realejos.jpg"), href: "/#contacto", position: "center 60%" },
-  { title: "Reparto", subtitle: "Martes y viernes", image: img("despiezando.jpg"), href: "/#servicios" },
+  { title: "Reparto", subtitle: "Para empresas", image: img("despiezando.jpg"), href: "/#servicios" },
 ];
 
 export const productCards = [
