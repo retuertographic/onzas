@@ -4,7 +4,7 @@ import { asset } from "./asset";
 export function Hero() {
   return (
     <section className="relative flex h-[660px] items-center justify-center overflow-hidden max-md:h-[560px]">
-      <div className="absolute inset-0 bg-fixed bg-cover bg-center max-lg:bg-scroll" style={{ backgroundImage: `url(${asset("/sites/ochoonzas/img/despiece.jpg")})` }} />
+      <div className="absolute inset-0 bg-fixed bg-cover bg-center max-lg:bg-scroll" style={{ backgroundImage: `url(${asset("/sites/ochoonzas/img/hero-congelados.jpg")})` }} />
       <div className="absolute inset-0 bg-black/45" />
       <div className="relative flex flex-col items-center px-6 pt-4 text-center">
         <h1 className="sr-only">Ocho Onzas, frescos y congelados</h1>
