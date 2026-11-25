@@ -104,7 +104,7 @@ export const posts: Post[] = [
     excerpt:
       "No es lo mismo un guiso que una plancha. Te contamos para qué va mejor cada cefalópodo que tienes en la tienda.",
     cover: img("cefalopodos.jpg"),
-    coverAlt: "Calamares y pulpo frescos",
+    coverAlt: "Calamares frescos en un plato",
     body: [
       { type: "p", text: "En la tienda tenemos cinco cefalópodos congelados y cada uno tiene su sitio en la cocina. Si dudas, pregúntanos y te decimos cuál le va a tu plato." },
       {
@@ -225,7 +225,7 @@ export const posts: Post[] = [
     excerpt:
       "Sartén sin aceite, fuego medio y vuelta y vuelta. Con pan y unas papas, cena resuelta.",
     cover: img("chistorra-10-minutos.jpg"),
-    coverAlt: "Chistorra haciéndose en la sartén",
+    coverAlt: "Sartén con chorizo, huevos y papas",
     body: [
       { type: "p", text: "Hay noches en las que no apetece complicarse. Para esas, la chistorra fresca es una aliada." },
       { type: "h2", text: "Cómo hacerla" },
