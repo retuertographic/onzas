@@ -3,6 +3,7 @@ import { Contact } from "@/components/sites/ochoonzas/contact";
 import { Footer } from "@/components/sites/ochoonzas/footer";
 import { Header } from "@/components/sites/ochoonzas/header";
 import { Hero } from "@/components/sites/ochoonzas/hero";
+import { NewsSection } from "@/components/sites/ochoonzas/news-section";
 import { ImageSlider } from "@/components/sites/ochoonzas/image-slider";
 import { Products } from "@/components/sites/ochoonzas/products";
 import { highlightSlides, serviceSlides } from "@/components/sites/ochoonzas/site-data";
@@ -28,6 +29,7 @@ export default function Home() {
         <WhatWeDo />
         <ImageSlider slides={serviceSlides} variant="box" interval={2000} label="Cómo trabajamos" className="h-[400px] max-md:h-[300px]" />
         <Products />
+        <NewsSection />
         <Contact />
       </main>
       <Footer />

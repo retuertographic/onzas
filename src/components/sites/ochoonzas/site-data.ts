@@ -74,6 +74,7 @@ export const nav: NavItem[] = [
       { label: "Precocinados", href: "/productos#del-mar" },
     ],
   },
+  { label: "Novedades", href: "/novedades" },
   { label: "Contacto", href: "/#contacto" },
 ];
 
